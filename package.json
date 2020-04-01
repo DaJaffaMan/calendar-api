@@ -1,0 +1,46 @@
+{
+  "name": "calendar-api",
+  "version": "0.1.0",
+  "description": "Calendar API",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest test/index.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaJaffaMan/calendar-api.git"
+  },
+  "keywords": [
+    "Calendar",
+    "API",
+    "Express",
+    "TypeORM",
+    "Jest"
+  ],
+  "author": "Jack Jefferies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaJaffaMan/calendar-api/issues"
+  },
+  "homepage": "https://github.com/DaJaffaMan/calendar-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.4",
+    "@types/jest": "^25.1.4",
+    "jest": "^25.2.4",
+    "ts-jest": "^25.3.0",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
+  }
+}
