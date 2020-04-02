@@ -4,9 +4,11 @@
   "description": "Calendar API",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node-dev --debug --watch src src/index.ts",
+    "start": "ts-node-dev -r dotenv/config --debug --watch src src/index.ts",
     "test": "jest test/",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "environment": "docker-compose -p calendar-api up -d"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,11 @@
   },
   "homepage": "https://github.com/DaJaffaMan/calendar-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.0.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24"
   },
   "devDependencies": {
     "@types/express": "^4.17.4",

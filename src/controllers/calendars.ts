@@ -6,13 +6,13 @@ import { Calendar } from "../models";
 export const calendarController: CalendarController = {
     getCalendars: async (req: Request, _res: Response, next: NextFunction) => {
         const calendars = [{name: 'fam'}];
-        req = storeCalendarData(req, calendars);
+        req = populateRequestData(req, calendars);
         next();
         return Promise.resolve(calendars);
     }
 }
 
-function storeCalendarData(req: Request, calendars: Calendar[]): Request {
+function populateRequestData(req: Request, calendars: Calendar[]): Request {
     req.data = {
         calendars
     }
