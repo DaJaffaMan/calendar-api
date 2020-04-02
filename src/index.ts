@@ -1,5 +1,5 @@
 import express from "express";
-import { calendarController } from './controllers'
+import { calendarControllerV1 } from './controllers'
 import responseResolver from './utils/response-resolver'
 
 function startServer() {
@@ -7,7 +7,7 @@ function startServer() {
     const port = process.env.CALENDAR_API_PORT || 3000;
 
     app.set('Content-Type', 'application/json')
-    app.get('/calendars', calendarController.getCalendars);
+    app.get('v1/calendars', calendarControllerV1.getCalendars);
     
     app.use(responseResolver)
     app.listen(port);

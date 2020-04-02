@@ -3,7 +3,7 @@ import { CalendarController } from "../api/calendar";
 import { Request, Response, NextFunction } from "express";
 import { Calendar } from "../models";
 
-export const calendarController: CalendarController = {
+export const calendarControllerV1: CalendarController = {
     getCalendars: async (req: Request, _res: Response, next: NextFunction) => {
         const calendars = [{name: 'fam'}];
         req = populateRequestData(req, calendars);
