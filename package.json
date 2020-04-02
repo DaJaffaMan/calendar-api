@@ -8,7 +8,11 @@
     "test": "jest test/",
     "test:watch": "jest --watch",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "environment": "docker-compose -p calendar-api up -d"
+    "compose:up": "docker-compose up -d",
+    "compose:down": "docker-compose down",
+    "migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
+
   },
   "repository": {
     "type": "git",

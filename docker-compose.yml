@@ -3,8 +3,14 @@ services:
 
   postgres:
     image: "postgres:9.6.1"
+    restart: always
     ports:
       - "5432:5432"
     env_file:
       - .env
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
