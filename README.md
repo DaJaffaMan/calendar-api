@@ -1,6 +1,6 @@
 # Calendar API
 
-Express server to get calendar content, using Postgres as a RDBMS and typeorm as an ORM.
+Express server to handle calendar content, using Postgres as a RDBMS and typeorm as an ORM.
 
 # Build status
 [![Build Status](https://travis-ci.com/DaJaffaMan/calendar-api.svg?branch=master)](https://travis-ci.com/DaJaffaMan/calendar-api)
