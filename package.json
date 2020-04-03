@@ -50,6 +50,10 @@
   },
   "jest": {
     "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "dist",
+      "/node_modules/"
+    ],
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{ts}",
