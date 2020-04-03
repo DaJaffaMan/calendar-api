@@ -1,6 +1,6 @@
-import { Response, Request, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 
-function responseResolver(req: Request, res: Response, next: NextFunction) {
+function responseResolver(req: any, res: Response, next: NextFunction) {
     if(req.data) {
         res.send(req.data);
     }

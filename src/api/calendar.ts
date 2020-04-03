@@ -1,4 +1,4 @@
-import { Calendar } from "../models";
+import { Calendar } from "../controllers/models";
 import { Request, Response, NextFunction } from "express";
 
 export interface CalendarController {

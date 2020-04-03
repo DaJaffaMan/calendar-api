@@ -7,7 +7,7 @@ function startServer() {
     const port = process.env.CALENDAR_API_PORT || 3000;
 
     app.set('Content-Type', 'application/json')
-    app.get('v1/calendars', calendarControllerV1.getCalendars);
+    app.get('/v1/calendars', calendarControllerV1.getCalendars);
     
     app.use(responseResolver)
     app.listen(port);

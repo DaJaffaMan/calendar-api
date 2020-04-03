@@ -44,9 +44,9 @@
     // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     "typeRoots": [
-      "./types",
-      "./node_modules/@types",
-      "src/types/types.d.ts"],
+      "@types",
+      "node_modules/@types",
+    ],
     /* List of folders to include type definitions from. */
     "types": [
       "jest"
@@ -71,13 +71,13 @@
   },
   "include": [
     "src/*",
-    "test"
+    "test",
   ],
   "exclude": [
     "node_modules",
   ],
   "files": [
-    "src/types/types.d.ts",
+    "src/@types/types.d.ts",
   ],
   "types": ["node", "jest"]
 }

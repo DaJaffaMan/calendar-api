@@ -1,6 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
-@Entity()
+@Entity({ database: process.env.DATABASE || "postgres", schema: "calendars", name: "calendar"})
 export class Calendar {
 
     constructor(name: string) {
