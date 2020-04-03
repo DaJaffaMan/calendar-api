@@ -13,6 +13,8 @@ test("Should return calendars", async () => {
     mockRepoistory.retrieveCalendars.mockReturnValue(Promise.resolve([{id: 1, name: "family"}]));
     
     const actual = await calendarControllerV1.getCalendars(mockRequest, mockResponse, () => {});
+
+    expect(calendarRepository.retrieveCalendars).toBeCalledTimes(1);
     expect(actual).toStrictEqual([{id: 1, name: 'family'}]);
 });
 

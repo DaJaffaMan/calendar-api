@@ -3,4 +3,5 @@ import { Request, Response, NextFunction } from "express";
 
 export interface CalendarController {
     getCalendars(req: Request, res: Response, next: NextFunction): Promise<Calendar[]>;
+    createCalendar(req: Request, res: Response, next: NextFunction): Promise<Calendar>;
 }

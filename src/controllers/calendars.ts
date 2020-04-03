@@ -13,16 +13,20 @@ export const calendarControllerV1: CalendarController = {
                 name: entity.name
             }
         })
-        req = populateRequestData(req, calendars);
+        req.data = calendars;
         next();
         return Promise.resolve(calendars);
-    }
-}
+    },
+    createCalendar: async (req: Request, _res: Response, next: NextFunction) => {
+        const calendarEntity = await calendarRepository.createCalendar({name: req.params.name});
+        
+        const calendar = {
+                id: calendarEntity.id!,
+                name: calendarEntity.name
+        };
 
-function populateRequestData(req: any, calendars: Calendar[]): Request {
-    req.data = {
-        calendars
+        req.data = calendar
+        next();
+        return Promise.resolve(calendar)
     }
-
-    return req;
 }

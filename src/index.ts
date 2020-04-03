@@ -8,6 +8,7 @@ function startServer() {
 
     app.set('Content-Type', 'application/json')
     app.get('/v1/calendars', calendarControllerV1.getCalendars);
+    app.post('/v1/calendars/:name', calendarControllerV1.createCalendar)
     
     app.use(responseResolver)
     app.listen(port);

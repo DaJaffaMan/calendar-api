@@ -12,7 +12,6 @@
     "compose:down": "docker-compose down",
     "migrate": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
-
   },
   "repository": {
     "type": "git",
