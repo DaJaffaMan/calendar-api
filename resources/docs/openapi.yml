@@ -1,46 +1,68 @@
 openapi: 3.0.0
 info:
- title: Calendars API
- description: This is the Calenders API.
- version: '1.0'
+    title: Calendars API
+    description: This is the Calenders API.
+    version: "1.0"
 paths:
- /calendars:
-   get:
-     x-swagger-router-controller: calendarController
-     operationId: getCalendars
-     tags:
-       - /calendars
-     description: >-
-       Returns calendars
-     responses:
-       '200':
-         description: Successful request.
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/Calendar'
-       default:
-         description: Invalid request.
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/Error'
+    /calendars:
+        get:
+            x-swagger-router-controller: calendarController
+            operationId: getCalendars
+            tags:
+                - /calendars
+            description: >-
+                Returns calendars
+            responses:
+                "200":
+                    description: Successful request.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Calendar"
+                default:
+                    description: Invalid request.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+    /calendars/{name}:
+        post:
+            x-swagger-router-controller: calendarController
+            operationId: createCalendar
+            tags:
+                - /calendars/{name}
+            description: Create new calendar
+            parameters:
+              - in: path
+                name: name
+                schema:
+                  type: string
+                required: true
+                description: The name the calendar will created with.
+            responses:
+                "200":
+                    description: Successful request.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Calendar"
+
 servers:
- - url: 'localhost:3001/v1'
+    - url: "localhost:3001/v1"
 components:
- schemas:
-   Calendar:
-     properties:
-       name:
-         type: string
-     required:
-       - name
-   Error:
-     properties:
-       code:
-         type: number
-       message:
-         type: string
-     required:
-       - code
-       - message
+    schemas:
+        Calendar:
+            properties:
+                name:
+                    type: string
+            required:
+                - name
+        Error:
+            properties:
+                code:
+                    type: number
+                message:
+                    type: string
+            required:
+                - code
+                - message
